@@ -1,6 +1,4 @@
 resource "aws_instance" "test_instance" {
-    # for_each = toset(var.set)
-    # count=3
     for_each = var.loop_name
     ami=each.value.ami
     instance_type=each.value.ins_type
@@ -11,16 +9,10 @@ resource "aws_instance" "test_instance" {
 
   tags={
     name=each.value.name
-    # owner=var.owner[count.index]
-    owner=each.key
-    
-    # name=each.key
-    # owner="Manish"
- 
+    owner = "manish.joshi@cloudeq.com"
   }
    volume_tags = {
     Name = each.value.name
-    # owner=var.owner[count.index]
     owner = "manish.joshi@cloudeq.com"
   }
 }
