@@ -7,13 +7,3 @@ variable "user_names" {
   type        = list(string)
   default     = ["Dipanshu", "Harsh", "Mohit"]
 }
-# variable "owner"{
-#     type=list(string)
-#     description="Give tag owner "
-
-# }
-# variable "set" {
-#   type = set(string)
-#   description = "Give Instance Name"
-
-# }
